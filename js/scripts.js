@@ -1,20 +1,22 @@
-//The only variable that will determine the output is selecting a number from 1-9.
 
 $(document).ready(function() {
-  var number = parseInt($("#number").val());
 
-//User Interface Logic
   $("form#survey").submit(function(event) {
-    if(number <=3) {
-      return ;
-    }if else(number<=6) {
-      return ;
-    }else {
-      return ;
 
-    }
+  var number = parseInt($("select#number").val());
 
 
-  });
-    $("results").text(number);
+  if(number <=3) {
+    result = ;
+  }else if (number<=6 || number>3) {
+    result =;
+  }else {
+    result = ;
+  }
+
+
+  $("#results").text(number);
+    event.preventDefault();
+  };
+});
 });
