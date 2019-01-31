@@ -1,29 +1,23 @@
 $(document).ready(function() {
-  // when they submit form, get input from user
-  $("#age").submit(function(event) {
 
-    // save info in variables
+  $("form#survey").submit(function(event) {
+
+    event.preventDefault();
 
     var num = parseInt($("#number").val());
-    event.preventDefault();
-    console.log();
+
+
+
+    $("#results").show();
 
     // write if statements to decide which result the user sees
     if(num >=1 && num <=3) {
-      console.log(" ");
-      // $('#result').text("Java/Andriod");
-      $('#java-android').show();
-      $('#ruby-rails').hide();
-      $('#css-design').hide();
+      $("#results").text("Java/Andriod");
     } else if(num <= 6) {
-      $('#java-android').hide();
-      $('#ruby-rails').show();
-      $('#css-design').hide();
+      $("#results").text("Ruby/Rails");
     } else {
-      $('#java-android').hide();
-      $('#ruby-rails').hide();
-      $('#css-design').show();
+      $("#results").text("CSS/Design");
     }
-    $('.result').text(num);  
+
+    });
   });
-});
